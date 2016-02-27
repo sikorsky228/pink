@@ -1,0 +1,126 @@
+.promo{
+    height:100%;
+    background: url('../img/background-1@1x.jpg') no-repeat 50% 0;
+    background-size: cover;
+}
+
+.promo-container{
+    margin:0 auto;
+    max-width:@container-width;
+    height:100%;
+}
+
+.promo__wrapper{
+    position:relative;
+    height:788px;
+    margin:auto;
+    max-width:@container-width;
+    background: url('../img/iphone-hand-1.png') no-repeat 20px 190px;
+}
+
+.promo__title{
+        position:absolute;
+        font-size:24px;
+        font-weight: 100;
+        top:90px;
+        left:50%;
+        color:#fff;
+        text-align:center;
+        margin-left:-135px;
+        width:260px;
+    }
+
+.promo-desc{
+        position:absolute;
+        bottom:0px;
+        left:0;
+        text-align:center;
+        padding:20px 10px;
+        width:100%;
+        background-color: @darkblue;
+        color:#fff;
+        
+    .promo-desc__button{
+        display: block;
+        max-width:320px;
+        margin:0 auto;
+        border:3px solid #fff;
+        border-radius: 30px;
+        font-size:21px;
+        font-weight: 800;
+        color:#fff;
+        padding:10px 5px;
+        background-color:transparent;
+        cursor:pointer;
+    }
+    
+    .promo-desc__button:hover{
+        background-color:#fff;
+        color:@pink;
+    }
+    
+    .promo-desc__app-icons{
+       margin:30px 0;
+    }
+    .promo-desc__app-icons svg{
+        margin:15px;
+    }
+    p{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+   .promo__wrapper{
+        background: url('../img/iphone-hand-2@1x.png') no-repeat 0 170px;
+        height:700px;
+    }
+    .promo__title{
+        position:absolute;
+        top:200px;
+        left:60px;
+        font-size:40px;
+        line-height: 48px;
+        width:260px;
+        padding:0 10px;
+        margin-left:0;
+    }
+    .promo-desc{
+        position:absolute;
+        left:40px;
+        bottom:40px;
+        background-color:transparent; 
+        width:320px;
+        text-align:center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+   .promo__wrapper{
+        background: url('../img/iphone-hand-3@1x.png') no-repeat 0 170px;
+        height:800px;
+    }
+   .promo__title{
+        position:absolute;
+        width:320px;
+        font-size:50px;
+        font-weight: 300;
+        top:220px;
+        left:10px;
+        padding:0 10px;
+        line-height: 60px;
+   }
+
+.promo-desc{
+        position:absolute;
+        bottom:50px;
+        left:10px;
+        text-align:center;
+        padding:50px 10px;
+        width:320px;
+        background-color:transparent;
+    }
+}

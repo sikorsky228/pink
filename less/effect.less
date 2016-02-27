@@ -1,0 +1,124 @@
+.effect__wrapper{
+    display:flex;
+    max-width:960px;  
+    margin: 0 auto;
+    justify-content:space-around;
+    padding:40px 0;
+
+}
+.effect__desc{
+    width:40%;
+}
+.effect__timer-img{
+    position:relative;
+}
+.effect__timer-img svg{
+    color:@dark-gray;
+    fill: currentColor;
+}
+.effect{
+    display:none;
+}
+.timer-medium{
+    display: none;
+}
+.timer-large{
+    display:none;
+}
+@media screen and (min-width:700px){
+    .effect{
+        display:block;
+    }
+    .timer-medium{
+        display:block;    
+    }
+    .effect__desc{
+        width:60%;
+        p{
+            width:300px;
+        }
+        .desc__title{
+            width:300px;
+        }
+    }
+    .effect__timer-img 
+        span {
+            position: absolute;
+            top: 61px;
+            left: 21px;
+            color: @pink;
+            font-size: 100px;
+            border: 15px solid @pink;
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            text-align: center;
+            font-weight: 700;
+            line-height: 182px;
+            background-color: #fff;
+    }
+}
+@media screen and (min-width:992px){
+    .timer-large{
+        display:block;
+}
+    .timer-medium{
+    display: none;
+}
+    .effect__timer-img{
+    width:30%;
+    
+        span{
+            position: absolute;
+            top: 86px;
+            left: 39px;
+            color: @pink;
+            font-size: 100px;
+            border: 15px solid @pink;
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            text-align: center;
+            font-weight: 700;
+            line-height: 182px;
+        }
+}
+    .desc__title{
+        font-size:28px;
+    }
+    .effect__desc{
+        padding-top:90px;
+        padding-left:85px;
+        
+        desc__title{
+            width:400px;
+        }
+        p{
+            font-size:18px;
+            line-height:32px;
+            padding-bottom:20px;
+            width:400px;
+        }
+        
+        .desc__more{
+            color:@pink;
+        }
+    }
+}
+@media screen and (min-width:1200px){
+        .effect{
+            background-color:@lightgray;
+        }
+        .effect__desc{
+        
+        desc__title{
+            width:600px;
+        }
+        p{
+            font-size:18px;
+            line-height:32px;
+            padding-bottom:20px;
+            width:600px;
+        }
+    }
+}

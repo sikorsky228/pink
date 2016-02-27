@@ -1,0 +1,170 @@
+.nav-items{
+    li {
+    position:relative;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background: red;
+    }
+    .nav-items__active-item:after{
+        content:'';
+        position:absolute;
+        left:5px;
+        top:5px;
+        width:5px;
+        height:5px;
+        border-radius: 50%;
+        background:black;
+        
+    }
+    label{
+        background:black;
+        width:20px;
+        height:20px;
+        margin:5px;
+    }
+}
+
+#frst[checked="checked"] ~ label[for="frst"],
+#scnd[checked="checked"] ~ label[for="scnd"],
+#thrd[checked="checked"] ~ label[for="thrd"]{
+    background:red;
+}
+.price{
+    background-color:@lightgray;
+}
+.price__wrapper{
+    width:960px;
+    margin:0 auto;
+    overflow: hidden;
+}
+
+
+.price__large-table{
+    display:none;
+}
+
+@media screen and (min-width:700px){
+    .price__large-table{
+        display:table;
+        text-align: center;
+        margin: 0 auto;
+        border-collapse:collapse;
+        background-color: #fff;
+    .check {
+    color: rgba(235, 0, 0, 0);
+    font: 0/0 a;
+    }
+    .check i {
+        width: 43px;
+    }
+    .check > i:before,
+    .check > i:after {
+            content: '';
+            position: absolute;
+        }
+    .check > i {
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            vertical-align: middle;
+        }
+    .check > i.checked:before {
+            top: 19px;
+            left: 4px;
+            width: 15px;
+            height: 2px;
+            background: #3dc644;
+            -webkit-transform: rotate(-132deg);
+            -ms-transform: rotate(-132deg);
+            /* transform: rotate(-132deg); */
+        }
+     .check > i:before {
+            top: 13px;
+            left: 4px;
+            width: 35px;
+            height: 2px;
+            background: #f25b26;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    }
+.check > i.checked:after {
+    top: 14px;
+    left: 12px;
+    width: 28px;
+    height: 2px;
+    background: #3dc644;
+    -webkit-transform: rotate(-47deg);
+    -ms-transform: rotate(-47deg);
+    transform: rotate(-47deg);
+}
+.check > i:after {
+    top: 13px;
+    left: 3px;
+    width: 35px;
+    height: 2px;
+    background: #f25b26;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+        td{
+            border:1px solid #ccc;
+            padding:10px 0;
+        }
+        
+        td{
+            width:220px;
+            text-align: left;
+        }
+        .table-header{
+            background:@darkblue;
+            color:#fff;
+            td{
+                text-align: center;
+            }
+            span{
+                display:block;
+            }
+        }
+        .table__cell--null{
+            border:none;
+            background-color: @lightgray;
+        }
+        .table__cell--hit{
+            position:relative;
+            overflow: hidden;
+        }
+        .table__cell--hit:before{
+            content: 'ХИТ';
+            position: absolute;
+            top: 3px;
+            left: -21px;
+            display: block;
+            width: 80px;
+            height: 30px;
+            background-color: red;
+            font-size: 17px;
+            color: white;
+            transform: rotate(-45deg);
+        }
+        .table__cell-left{
+            padding: 10px;
+        }
+    }
+
+}
+
+
+.table_container{
+    width:300%;
+    
+    div{
+        display:inline-block;
+        width:33%;
+        border:2px solid #ccc;
+    }
+}
