@@ -5,7 +5,10 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>Pink</title>
 	<link rel="stylesheet" href="css/styles.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   </head>
   <body>
   <header class="page-header">
@@ -256,8 +259,8 @@
   </section>
   
   <section class="testimonials">
-    <div class="testimonials_wrapper">
-      <div class="testimonials__item" id="testimonials">
+    <div class="testimonials_wrapper" id="owl-demo">
+      <div class="testimonials__item item" id="testimonials">
         <div class="testimonials-text">
             Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
         </div>
@@ -266,12 +269,25 @@
           25 лет, водитель трамвая
         </div>
       </div>
-
-      <div class="testimonials__item"></div>
-      <div class="testimonials__item"></div>
-      <div class="testimonials__nav">
-
+      <div class="testimonials__item item" id="testimonials">
+        <div class="testimonials-text">
+            Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+        </div>
+        <div class="testimonials-author">
+          <p>Николай Петров</p>
+          25 лет, водитель трамвая
+        </div>
       </div>
+      <div class="testimonials__item item" id="testimonials">
+        <div class="testimonials-text">
+            Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+        </div>
+        <div class="testimonials-author">
+          <p>Николай Петров</p>
+          25 лет, водитель трамвая
+        </div>
+      </div>
+    </div>
     </div>
   </section>
   
@@ -342,23 +358,10 @@
         </tr>
         
         <div class="price__small-table">
-            <div class="table_container">
-                
-                <div class="row-1">1</div>
-                <div class="row-2">2</div>
-                <div class="row-3">3</div>
-                
-                
-            </div>
-             <a href="#" id="next_slide">next</a>
+
         </div>
         <div class="nav-items">
-          <input type="radio" name="check-slides" class="nav-item" id="frst" data-number="1" checked="checked">
-          <input type="radio" name="check-slides" class="nav-item" id="scnd" data-number="2">
-          <input type="radio" name="check-slides" class="nav-item" id="thrd" data-number="3">
-          <label for="frst"></label>
-          <label for="scnd"></label>
-          <label for="thrd"></label>
+
           
         </div>
         
@@ -391,69 +394,83 @@
    </div>   
   </section>
   
-  <section class="map"></section>
+  <section class="map">
+    <div class="map-wrapper">
+      <div id="map_canvas" class="map-canvas">
+      </div>     
+    </div>      
+  </section>
   
   <footer class="page-footer">
-      <img class="page-footer__logo">
-      <div class="page-footer__social"></div>
+      <img src="" class="page-footer__logo" alt='logo'>
+      <div class="page-footer__social">
+        <ul class="social-list">
+            <li class="fb"><a href="#"></a></li>
+            <li class="fb"><a href="#"></a></li>
+            <li class="fb"><a href="#"></a></li>
+        </ul>
+      </div>
       <div class="page-footer__copyright"></div>
   </footer>
+     
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
-var $col=0;
-//функция сдвига слайдов
-function margin_left($margin){
-    event.preventDefault();
-    $('.table_container').animate({marginLeft:-$margin+'%'},1000);
-};
-    //Количество слайдов
-    $slides_col = $('input.nav-item').length;
-
-    $('#next_slide').click(function(){
-        $col++;
-        var $margin = (100 * $col);
-        if ($col < $slides_col){
-            event.preventDefault();
-            var $margin = (100 * $col);
-            margin_left($margin);
-            
-            $("input:checked").next(".nav-item").attr({"checked":true});
-            $("input:checked").prev(".nav-item").attr({"checked":false});
-
-            //http://lorempixel.com/800/350/sports/
-        }
-            else{
-		event.preventDefault();
-        $margin = 0;
-        $col - 0;
-        margin_left($margin);
-        $("input.nav-item").first(".nav-item").attr({"checked":true});
-        $("input.nav-item").last(".nav-item").attr({"checked":false});
-            }
-        
-    });
-    //Событие для кнопок с номерами слайдов
-    
-   $("input.nav-item").bind("click", function (){
-        var $s = $(this).attr('data-number');
-        $s--;
-        $col = $s;
-       $('input.nav-item').attr("checked",false);
-
-                $(this).attr("checked",true);
-        var $margin = 100 * $s;
-        margin_left($margin);
-
-        
-    });
-    
-    
-
-
-    
-
-    
-    
-      
+    function contaktMap() {
+      var latlng = new google.maps.LatLng(59.936289, 30.320837);
+      var settings = {
+        zoom: 17,
+        scrollwheel: false,
+        center: latlng,
+        mapTypeControl: true,
+        mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+        navigationControl: true,
+        navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+        mapTypeId: google.maps.MapTypeId.ROADMAP};
+      var map = new google.maps.Map(document.getElementById("map_canvas"), settings);
+      var contentString = '<div id="content">';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      var trainImage = new google.maps.MarkerImage('img/point.png',
+        new google.maps.Size(46,60),
+        new google.maps.Point(0,0),
+        new google.maps.Point(30,55)
+      );
+      var trainPos = new google.maps.LatLng(59.936289, 30.320837);
+      var trainMarker = new google.maps.Marker({
+        position: trainPos,
+        map: map,
+        icon: trainImage,
+        zIndex: 2
+      });
+}
+$(function() {
+    contaktMap();
+});  
+</script>
+<script src="js/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+      autoPlay : 3000,
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      singleItem:true,
+      paginationSpeed : 1000,
+      goToFirstSpeed : 2000,
+      navigationText : false
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
+});
 
 </script>
 </body>
